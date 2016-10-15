@@ -2,7 +2,7 @@
 - hosts: webservers
   remote_user: root
   tasks:
-  - name: ensure apache is at the latest version
+  - name: ensure firebird is at the latest version
     zypper:
       name: firebird
       state: latest
