@@ -2,5 +2,5 @@
 - hosts: PG_Server
   remote_user: root
   tasks:
-  - name: create new Postgre DB
+  - name: create new Postgre DB from template
      command: createdb -O {{ dbuser }} -T {{ template_db }} {{ new_db }}
