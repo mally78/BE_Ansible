@@ -1,6 +1,8 @@
 ---
-- hosts: PG_Server
+- hosts: webservers
   remote_user: root
   tasks:
   - name: create new Postgre DB from template
      command: createdb -O {{ dbuser }} -T {{ template_db }} {{ new_db }}
+     become: yes
+     become_user: postgres
