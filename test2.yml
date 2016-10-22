@@ -1,8 +1,6 @@
 ---
-- hosts: webservers
+- hosts: PG_Server
   remote_user: root
   tasks:
-  - name: ensure firebird is at the latest version
-    zypper:
-      name: firebird
-      state: latest
+  - name: create new Postgre DB
+     command: createdb -O {{ dbuser }} -T {{ template_db }} {{ new_db }}
