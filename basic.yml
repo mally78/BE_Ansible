@@ -1,10 +1,10 @@
 ---
 - hosts: server
   remote_user: root
-  roles:
-#  - opdavies.webmin
+  # roles:
+  #- opdavies.webmin
   
-  tasK:
+  tasks:
   - name: install bash completion
     yum:
      name: bash-completion
