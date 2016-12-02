@@ -12,3 +12,4 @@
     - bash-completion
     - mc
     - setroubleshoot-server
+    - epel
