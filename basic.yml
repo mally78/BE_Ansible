@@ -1,8 +1,9 @@
 ---
 - hosts: server
   remote_user: root
-  # roles:
+  roles:
   #- opdavies.webmin
+   - { role: blackstar257.selinux, selinux_state: disabled }
   
   tasks:
   - name: notwendige tools installieren
