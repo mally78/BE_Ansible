@@ -4,7 +4,8 @@
   roles:
   #- opdavies.webmin
    - { role: blackstar257.selinux, selinux_state: disabled }
-  
+   - { role: goozbach.EPEL, epel_testing_enabled: 1 }
+   
   tasks:
   - name: notwendige tools installieren
     yum: state=present name={{ item }}
@@ -12,4 +13,3 @@
     - bash-completion
     - mc
     - setroubleshoot-server
-    - epel
