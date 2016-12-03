@@ -67,4 +67,9 @@
     template:
      src: /home/pi/odoo-server.j2
      dest: /etc/odoo-server.conf
+     
+  - name: configfile kopieren
+    template:
+     src: /home/pi/odoo_service.j2
+     dest: /usr/lib/systemd/system/odoo.service
     
