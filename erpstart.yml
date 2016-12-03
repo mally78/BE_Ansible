@@ -38,6 +38,7 @@
     - kernel-devel 
     - wkhtmltopdf
     - python-pip
+    - postgresql-devel
    
   - name: DB User anlegen
     postgresql_user:
