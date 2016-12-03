@@ -72,4 +72,11 @@
     template:
      src: /home/pi/odoo_service.j2
      dest: /usr/lib/systemd/system/odoo.service
+  
+  - name: odoo starten
+    service:
+    name: odoo
+    state: started
+    enabled: yes 
+     
     
