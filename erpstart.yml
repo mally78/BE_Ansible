@@ -41,5 +41,5 @@
     - python-pip
  
   - name: odoo per github installieren 
-    command: git clone --branch 8.0 https://www.github.com/odoo/odoo /opt/odoo  
+    command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
 
