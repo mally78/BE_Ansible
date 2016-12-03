@@ -45,6 +45,8 @@
      password: "{{ dbuser_pw }}"
      state: present
      role_attr_flags: NOSUPERUSER,NOCREATEROLE,CREATEDB
+    become: true
+    become_user: postgres
 
 #  - name: odoo per github installieren 
 #    command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
