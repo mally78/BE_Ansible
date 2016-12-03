@@ -2,7 +2,7 @@
 - hosts: server
   remote_user: root
   roles:
-#  - { role: sfromm.postgresql }
+  - { role: sfromm.postgresql }
     
   tasks:
   - name: notwendige tools installieren
