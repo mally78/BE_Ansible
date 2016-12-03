@@ -46,7 +46,7 @@
       become: yes
       become_user: postgres
       responses:
-      Question:
+        Question:
         - {{ dbuser_pw }}
         - {{ dbuser_pw }}
     
