@@ -43,12 +43,13 @@
   - name: DB User anlegen
     expect:
       command: createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt {{ dbuser }}
-      become: yes
-      become_user: postgres
       responses:
         Question:
         - {{ dbuser_pw }}
         - {{ dbuser_pw }}
+      become: yes
+      become_user: postgres
+      
     
 #  - name: odoo per github installieren 
 #    command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
