@@ -47,8 +47,8 @@
         Question:
         - "{{ dbuser_pw }}"
         - "{{ dbuser_pw }}"
-     become: true
-     become_user: postgres
+      become: true
+      become_user: postgres
     
 #  - name: odoo per github installieren 
 #    command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
