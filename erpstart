@@ -36,7 +36,9 @@
     - freetype-devel 
     - libjpeg-turbo-devel 
     - libtiff-devel 
-    - kernel-devel  
+    - kernel-devel 
+    - wkhtmltopdf
+    - pip
 
     
 
