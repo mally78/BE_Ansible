@@ -2,7 +2,7 @@
 - hosts: server
   remote_user: root
   roles:
-  - { role: sfromm.postgresql }
+#  - { role: sfromm.postgresql }
     
   tasks:
   - name: notwendige tools installieren
@@ -55,11 +55,16 @@
      password: "{{ dbuser_pw }}"
      home: /opt/odoo
 
-  - name: odoo per github installieren 
-    command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
-    become: true
-    become_user: "{{ dbuser }}"
+#  - name: odoo per github installieren 
+#    command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
+#    become: true
+#    become_user: "{{ dbuser }}"
 
-  - name: python Anhängigkeiten installieren
-    command: pip install -r /opt/odoo/odoo/requirements.txt
+#  - name: python Anhängigkeiten installieren
+#    command: pip install -r /opt/odoo/odoo/requirements.txt
+    
+  - name: configfile kopieren
+    template:
+     src: /home/pi/odoo-server.j2
+     dest: /etc/odoo-server.conf
     
