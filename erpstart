@@ -38,7 +38,7 @@
     - libtiff-devel 
     - kernel-devel 
     - wkhtmltopdf
-    - pip
+    - python-pip
 
     
 
