@@ -2,8 +2,8 @@
 - hosts: server
   remote_user: root
   roles:
-  #- opdavies.webmin
-   - { role: sfromm.postgresql }
+# - opdavies.webmin
+  - { role: sfromm.postgresql }
     
   tasks:
   - name: notwendige tools installieren
