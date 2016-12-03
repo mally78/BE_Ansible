@@ -52,7 +52,6 @@
     user:
      name: "{{ dbuser }}"
      password: "{{ dbuser_pw }}"
-     group: "{{ dbuser }}"
      home: /opt/odoo
 
 #  - name: odoo per github installieren 
