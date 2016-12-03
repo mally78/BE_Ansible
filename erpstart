@@ -4,10 +4,39 @@
   roles:
   #- opdavies.webmin
    - { role: sfromm.postgresql }
-   
+    
   tasks:
   - name: notwendige tools installieren
     yum: state=present name={{ item }}
     with_items: 
-    - bash-completion
+    - zlib-devel 
+    - bzip2-devel 
+    - openssl 
+    - openssl-devel 
+    - ncurses-devel 
+    - sqlite-devel 
+    - readline-devel 
+    - tk-devel 
+    - gdbm-devel 
+    - libpcap-devel 
+    - xz-devel 
+    - git 
+    - libpng 
+    - libjpeg 
+    - libXext 
+    - curl 
+    - xorg-x11-font-utils 
+    - fontconfig 
+    - python-virtualenv 
+    - libevent-devel 
+    - libxml2-devel 
+    - libxslt-devel 
+    - openldap-devel 
+    - openjpeg-devel 
+    - freetype-devel 
+    - libjpeg-turbo-devel 
+    - libtiff-devel 
+    - kernel-devel  
+
+    
 
