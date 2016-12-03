@@ -41,8 +41,8 @@
    
   - name: DB User anlegen
     postgresql_user:
-     name: {{ dbuser }}
-     password: {{ dbuser_pw }}
+     name: "{{ dbuser }}"
+     password: "{{ dbuser_pw }}"
      state: present
      role_attr_flags: NOSUPERUSER,NOCREATEROLE,CREATEDB
 
