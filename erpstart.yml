@@ -5,6 +5,15 @@
   - { role: sfromm.postgresql }
     
   tasks:
+    - name: repo erweitern
+    template:
+     src: /home/pi/fusiondirectory.j2
+     dest: /etc/yum.repos.d/fusiondirectory.repo
+    template:
+     src: /home/pi/fusiondirectory-extra.j2
+     dest: /etc/yum.repos.d/fusiondirectory-extra.repo
+     
+  
   - name: notwendige tools installieren
     yum: state=present name={{ item }}
     with_items: 
