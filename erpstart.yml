@@ -50,6 +50,9 @@
     - wkhtmltopdf
     - python-pip
     - postgresql-devel
+    - fusiondirectory
+    - fusiondirectory-schema
+    - schema2ldif
    
   - name: DB User anlegen
     postgresql_user:
