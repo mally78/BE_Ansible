@@ -5,7 +5,7 @@
   - { role: sfromm.postgresql }
     
   tasks:
-    - name: repo erweitern
+  - name: repo erweitern
     template:
      src: /home/pi/fusiondirectory.j2
      dest: /etc/yum.repos.d/fusiondirectory.repo
