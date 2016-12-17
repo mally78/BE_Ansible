@@ -85,8 +85,8 @@
   
   - name: odoo starten
     service:
-    name: odoo
-    state: started
-    enabled: yes 
+     name: odoo
+     state: started
+     enabled: yes 
      
     
