@@ -2,19 +2,19 @@
 - hosts: server
   remote_user: root
   roles:
-#  - { role: sfromm.postgresql }
+  - { role: sfromm.postgresql }
   - { role: bennojoy.openldap_server }
     
   tasks:
-  - name: repo erweitern
-    template:
-     src: /home/pi/fusiondirectory.j2
-     dest: /etc/yum.repos.d/fusiondirectory.repo
+#  - name: repo erweitern
+#    template:
+#     src: /home/pi/fusiondirectory.j2
+#     dest: /etc/yum.repos.d/fusiondirectory.repo
      
-  - name: repo 2 erweitern
-    template:
-     src: /home/pi/fusiondirectory-extra.j2
-     dest: /etc/yum.repos.d/fusiondirectory-extra.repo
+#  - name: repo 2 erweitern
+#    template:
+#     src: /home/pi/fusiondirectory-extra.j2
+#     dest: /etc/yum.repos.d/fusiondirectory-extra.repo
        
   - name: notwendige tools installieren
     yum: state=present name={{ item }}
@@ -50,9 +50,9 @@
     - wkhtmltopdf
     - python-pip
     - postgresql-devel
-    - fusiondirectory
-    - fusiondirectory-schema
-    - schema2ldif
+#    - fusiondirectory
+#    - fusiondirectory-schema
+#    - schema2ldif
    
   - name: DB User anlegen
     postgresql_user:
@@ -67,7 +67,7 @@
     user:
      name: "{{ dbuser }}"
      password: "{{ dbuser_pw }}"
-     home: /opt/odoo
+     home: /opt/erp
 
 #  - name: odoo per github installieren 
 #    command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
@@ -75,16 +75,16 @@
 #    become_user: "{{ dbuser }}"
 
 #  - name: python Anhängigkeiten installieren
-#    command: pip install -r /opt/odoo/odoo/requirements.txt
+#    command: pip install -r /opt/erp/odoo/requirements.txt
     
   - name: configfile kopieren
     template:
-     src: /home/pi/odoo-server.j2
+     src: /home/daniel/NAS/odoo/odoo-server.j2
      dest: /etc/odoo-server.conf
      
   - name: configfile kopieren
     template:
-     src: /home/pi/odoo_service.j2
+     src: /home/daniel/NAS/odoo/odoo_service.j2
      dest: /usr/lib/systemd/system/odoo.service
   
   - name: odoo starten
