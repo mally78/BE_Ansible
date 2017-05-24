@@ -69,13 +69,13 @@
      password: "{{ dbuser_pw }}"
      home: /opt/erp
 
-#  - name: odoo per github installieren 
-#    command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
-#    become: true
-#    become_user: "{{ dbuser }}"
+  - name: odoo per github installieren 
+    command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
+    become: true
+    become_user: "{{ dbuser }}"
 
-#  - name: python Anhängigkeiten installieren
-#    command: pip install -r /opt/erp/odoo/requirements.txt
+  - name: python Anhängigkeiten installieren
+    command: pip install -r /opt/erp/odoo/requirements.txt
     
   - name: configfile kopieren
     template:
