@@ -77,6 +77,14 @@
      group: root
 #     mode: 0755
 
+  - name: Log addons2 Ordner anlegen
+    file:
+     path: /opt/erp/addons2
+     state: directory
+     owner: odoo
+     group: odoo
+#     mode: 0755
+
   - name: odoo per github installieren 
     command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
     become: true
