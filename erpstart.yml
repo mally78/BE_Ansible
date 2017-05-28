@@ -93,6 +93,12 @@
      group: odoo
 #     mode: 0755
 
+  - name: module installieren
+    git:
+     repo: 'https://github.com/equitania/odoo-addons.git'
+     dest: /opt//opt/erp/sourcemod
+     update: no
+    
   - name: odoo per github installieren 
     command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
     become: true
