@@ -49,7 +49,7 @@
     - kernel-devel 
     - wkhtmltopdf
     - python-pip
-    - postgresql-devel
+#    - postgresql-devel
 #    - fusiondirectory
 #    - fusiondirectory-schema
 #    - schema2ldif
