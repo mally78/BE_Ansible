@@ -39,7 +39,7 @@
     - fontconfig 
     - python-virtualenv 
     - libevent-devel 
-#    - libxml2-devel 
+    - libxml2-devel 
     - libxslt-devel 
     - openldap-devel 
     - openjpeg-devel 
