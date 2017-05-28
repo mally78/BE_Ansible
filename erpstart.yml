@@ -98,7 +98,9 @@
      repo: 'https://github.com/equitania/odoo-addons.git'
      dest: /opt//opt/erp/sourcemod
      update: no
-    
+     become: true
+     become_user: "{{ dbuser }}"
+     
   - name: odoo per github installieren 
     command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
     become: true
