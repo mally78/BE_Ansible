@@ -73,7 +73,7 @@
     file:
      path: /var/log/odoo
      state: directory
-     owner: odoo
+     owner: "{{ dbuser }}"
      group: root
 #     mode: 0755
 
@@ -81,7 +81,7 @@
     file:
      path: /opt/erp/addons2
      state: directory
-     owner: odoo
+     owner: "{{ dbuser }}"
      group: odoo
 #     mode: 0755
 
@@ -89,14 +89,14 @@
     file:
      path: /opt/erp/sourcemod
      state: directory
-     owner: odoo
+     owner: "{{ dbuser }}"
      group: odoo
 #     mode: 0755
 
   - name: module installieren
     git:
      repo: 'https://github.com/equitania/odoo-addons.git'
-     dest: /opt//opt/erp/sourcemod
+     dest: /opt/erp/sourcemod
      update: no
      become: true
      become_user: "{{ dbuser }}"
