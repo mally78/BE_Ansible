@@ -75,23 +75,20 @@
      state: directory
      owner: "{{ dbuser }}"
      group: root
-#     mode: 0755
 
-  - name: Log addons2 Ordner anlegen
+  - name: addons2 Ordner anlegen
     file:
      path: /opt/erp/addons2
      state: directory
      owner: "{{ dbuser }}"
-     group: odoo
-#     mode: 0755
+     group: "{{ dbuser }}"
 
-  - name: Log addons2 Ordner anlegen
+  - name: sourcemod Ordner anlegen
     file:
      path: /opt/erp/sourcemod
      state: directory
      owner: "{{ dbuser }}"
-     group: odoo
-#     mode: 0755
+     group: "{{ dbuser }}"
 
   - name: module installieren
     git:
