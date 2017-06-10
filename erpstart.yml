@@ -90,8 +90,9 @@
      depth: 1
      dest: /opt/erp/sourcemod/{{ item.dest }}
      update: no
-    with_items:
-    - {dest: 'eq', url: 'https://github.com/OCA/reporting-engine.git'}
+    with_file:
+    - /home/daniel/NAS/odoo/module_git.txt
+ #   - {dest: 'eq', url: 'https://github.com/OCA/reporting-engine.git'}
  #   - "{{ giturl }}"
     become: true
     become_user: "{{ dbuser }}"
