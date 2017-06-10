@@ -92,11 +92,10 @@
 
   - name: module installieren
     git:
-     repo: "{{ item.url }}"
+     repo: "{{ item }}"
      version: "{{ version }}"
      depth: 1
-     remote: "{{ item.name }}"
-     dest: /opt/erp/sourcemod/"{{ item.name }}"
+     dest: /opt/erp/sourcemod/
      update: no
     with_items:
     - "{{ giturl }}"
