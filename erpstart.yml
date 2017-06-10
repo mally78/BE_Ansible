@@ -92,7 +92,7 @@
 
   - name: module installieren
     git:
-     repo: "{{ item }}"
+     repo: "{{ item.url }}"
      version: "{{ version }}"
      depth: 1
      remote: "{{ item.name }}"
