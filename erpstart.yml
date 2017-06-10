@@ -93,6 +93,7 @@
   - name: module installieren
     git:
      repo: "{{ item[0] }}"
+     version: "{{ version }}"
      dest: /opt/erp/sourcemod
      update: no
     with_nested:
