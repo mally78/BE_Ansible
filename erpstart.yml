@@ -83,12 +83,12 @@
      owner: "{{ dbuser }}"
      group: "{{ dbuser }}"
 
-  - name: sourcemod Ordner anlegen
-    file:
-     path: /opt/erp/sourcemod
-     state: directory
-     owner: "{{ dbuser }}"
-     group: "{{ dbuser }}"
+#  - name: sourcemod Ordner anlegen
+ #   file:
+  #   path: /opt/erp/sourcemod
+   #  state: directory
+    # owner: "{{ dbuser }}"
+     #group: "{{ dbuser }}"
 
   - name: module installieren
     git:
