@@ -97,7 +97,7 @@
      depth: 1
      dest: /opt/erp/sourcemod
      update: no
-    with_item:
+    with_items:
     - "{{ giturl }}"
     become: true
     become_user: "{{ dbuser }}"
