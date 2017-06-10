@@ -95,7 +95,8 @@
      repo: "{{ item }}"
      version: "{{ version }}"
      depth: 1
-     dest: /opt/erp/sourcemod
+     remote: "{{ item.name }}"
+     dest: /opt/erp/sourcemod/"{{ item.name }}"
      update: no
     with_items:
     - "{{ giturl }}"
