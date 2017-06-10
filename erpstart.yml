@@ -83,22 +83,16 @@
      owner: "{{ dbuser }}"
      group: "{{ dbuser }}"
 
-#  - name: sourcemod Ordner anlegen
- #   file:
-  #   path: /opt/erp/sourcemod
-   #  state: directory
-    # owner: "{{ dbuser }}"
-     #group: "{{ dbuser }}"
-
   - name: module installieren
     git:
-     repo: "{{ item }}"
+     repo: "{{ item.url }}"
      version: "{{ version }}"
      depth: 1
-     dest: /opt/erp/sourcemod/
+     dest: /opt/erp/sourcemod/"{{ item.dest }}"
      update: no
     with_items:
-    - "{{ giturl }}"
+    - {dest: 'eq', url: 'https://github.com/OCA/reporting-engine.git'}
+ #   - "{{ giturl }}"
     become: true
     become_user: "{{ dbuser }}"
      
