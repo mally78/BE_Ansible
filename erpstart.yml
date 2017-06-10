@@ -92,7 +92,7 @@
 
   - name: module installieren
     git:
-     repo: "{{ item[0] }}"
+     repo: "{{ item }}"
      version: "{{ version }}"
      depth: 1
      dest: /opt/erp/sourcemod
