@@ -88,7 +88,7 @@
      repo: "{{ item.url }}"
      version: "{{ version }}"
      depth: 1
-     dest: /opt/erp/sourcemod/"{{ item.dest }}"
+     dest: /opt/erp/sourcemod/{{ item.dest }}
      update: no
     with_items:
     - {dest: 'eq', url: 'https://github.com/OCA/reporting-engine.git'}
