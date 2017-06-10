@@ -92,9 +92,11 @@
 
   - name: module installieren
     git:
-     repo: 'https://github.com/equitania/odoo-addons.git'
+     repo: "{{ item[0] }}"
      dest: /opt/erp/sourcemod
      update: no
+    with_nested:
+    - "{{ giturl }}"
     become: true
     become_user: "{{ dbuser }}"
      
