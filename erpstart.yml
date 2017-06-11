@@ -82,6 +82,14 @@
      state: directory
      owner: "{{ dbuser }}"
      group: "{{ dbuser }}"
+    
+  - name: module kopieren  
+    unarchive:
+     src: /home/daniel/NAS/odoo/module/module.tar.gz
+     dest: /opt/erp/addons2
+     owner: "{{ dbuser }}"
+     group: "{{ dbuser }}"
+     mode: 0755
 
   - name: module installieren
     git:
