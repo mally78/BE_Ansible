@@ -111,7 +111,7 @@
   - name: odoo per github installieren 
     git:
      repo: 'https://github.com/odoo/odoo.git'
-     version: "{{ version }}"
+     version: 8.0
      depth: 1
      dest: /opt/erp/odoo
      update: yes
