@@ -92,7 +92,8 @@
      update: no
     with_items:
     - {dest: 'OCA_web', url: 'https://github.com/OCA/web.git'}
-    - {dest: 'ingadhoc', url: 'https://github.com/ingadhoc/miscellaneous.git'
+    - {dest: 'ingadhoc', url: 'https://github.com/ingadhoc/miscellaneous.git'}
+    - {dest: 'eq', url: 'https://github.com/equitania/odoo-addons.git'}
     become: true
     become_user: "{{ dbuser }}"
      
