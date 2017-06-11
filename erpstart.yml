@@ -94,6 +94,9 @@
     - {dest: 'OCA_web', url: 'https://github.com/OCA/web.git'}
     - {dest: 'ingadhoc', url: 'https://github.com/ingadhoc/miscellaneous.git'}
     - {dest: 'eq', url: 'https://github.com/equitania/odoo-addons.git'}
+    - {dest: 'no_phoning', url: 'https://github.com/bizzappdev/oerp_no_phoning_home.git'}
+    - {dest: 'smile', url: 'https://github.com/savoirfairelinux/smile_odoo_addons.git'}
+    - {dest: 'poslogo', url: 'https://github.com/muralikrishnareddy/poslogo.git'}
     become: true
     become_user: "{{ dbuser }}"
      
