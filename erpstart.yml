@@ -91,7 +91,8 @@
      dest: /opt/erp/sourcemod/{{ item.dest }}
      update: no
     with_items:
-    - {dest: 'OCA', url: 'https://github.com/OCA/reporting-engine.git'}
+    - {dest: 'OCA_web', url: 'https://github.com/OCA/web.git'}
+    - {dest: 'ingadhoc', url: 'https://github.com/ingadhoc/miscellaneous.git'
     become: true
     become_user: "{{ dbuser }}"
      
