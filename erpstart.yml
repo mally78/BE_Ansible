@@ -107,9 +107,15 @@
     - {dest: 'poslogo', url: 'https://github.com/muralikrishnareddy/poslogo.git'}
     become: true
     become_user: "{{ dbuser }}"
-     
+  
   - name: odoo per github installieren 
-    command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
+    git:
+     repo: 'https://github.com/odoo/odoo.git'
+     version: "{{ version }}"
+     depth: 1
+     dest: /opt/erp/odoo
+     update: yes
+   # command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
     become: true
     become_user: "{{ dbuser }}"
 
