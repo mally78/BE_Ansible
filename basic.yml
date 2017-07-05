@@ -7,7 +7,7 @@
    
   tasks:
   - name: notwendige tools installieren
-    yum: state=present name={{ item }}
+    yum: state=latest name={{ item }}
     with_items: 
     - bash-completion
     - mc
