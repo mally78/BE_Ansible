@@ -17,7 +17,7 @@
 #     dest: /etc/yum.repos.d/fusiondirectory-extra.repo
        
   - name: notwendige tools installieren
-    yum: state=present name={{ item }}
+    yum: state=latest name={{ item }}
     with_items: 
     - zlib-devel 
     - bzip2-devel 
