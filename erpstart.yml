@@ -94,7 +94,7 @@
   - name: module installieren
     git:
      repo: "{{ item.url }}"
-     version: {{ version }}
+     version: "{{ version }}"
      depth: 1
      dest: /opt/erp/sourcemod/{{ item.dest }}
      update: no
@@ -111,7 +111,7 @@
   - name: odoo per github installieren 
     git:
      repo: 'https://github.com/odoo/odoo.git'
-     version: {{ version }}
+     version: "{{ version }}"
      depth: 1
      dest: /opt/erp/odoo
      update: yes
