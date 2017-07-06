@@ -115,6 +115,7 @@
      depth: 1
      dest: /opt/erp/odoo
      update: yes
+     track_submodules: no
    # command:  git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch  
     become: true
     become_user: "{{ dbuser }}"
