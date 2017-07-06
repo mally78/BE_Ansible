@@ -3,7 +3,7 @@
   remote_user: root
   roles:
   - { role: sfromm.postgresql }
-#  - { role: bennojoy.openldap_server }
+  - { role: bennojoy.openldap_server }
     
   tasks:
 #  - name: repo erweitern
