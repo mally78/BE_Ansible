@@ -1,0 +1,8 @@
+---
+- hosts: server
+  remote_user: root
+  roles:
+  - { role: bennojoy.nginx }
+    
+  tasks:
+#  - name: repo erweitern
