@@ -2,7 +2,7 @@
 - hosts: server
   remote_user: root
   roles:
-  - { role: bennojoy.nginx }
+#  - { role: bennojoy.nginx }
   - { role: SoInteractive.letsencrypt }  
     
 #  tasks:
