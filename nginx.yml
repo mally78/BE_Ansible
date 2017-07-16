@@ -10,6 +10,6 @@
   - name: letsencrypt Zertifikat ertellen
     letsencrypt:
       account_key: /opt/account/account.key
-      csr: /etc/pki/cert/csr/sample.com.csr
-      dest: /etc/httpd/ssl/sample.com.crt
+      csr: /opt/account/sample.com.csr
+      dest: /opt/account/sample.com.crt
     register: mally123.ddns.net
