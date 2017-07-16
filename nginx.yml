@@ -5,5 +5,10 @@
 #  - { role: bennojoy.nginx }
   - { role: SoInteractive.letsencrypt }  
     
-#  tasks:
-#  - name: repo erweitern
+  tasks:
+
+- letsencrypt:
+    account_key: /etc/pki/cert/private/account.key
+    csr: /etc/pki/cert/csr/sample.com.csr
+    dest: /etc/httpd/ssl/sample.com.crt
+  register: sample_com_challenge
