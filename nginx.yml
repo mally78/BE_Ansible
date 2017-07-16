@@ -3,12 +3,13 @@
   remote_user: root
   roles:
 #  - { role: bennojoy.nginx }
-  - { role: SoInteractive.letsencrypt }  
+#  - { role: SoInteractive.letsencrypt }  
     
   tasks:
-
-- letsencrypt:
-    account_key: /etc/pki/cert/private/account.key
-    csr: /etc/pki/cert/csr/sample.com.csr
-    dest: /etc/httpd/ssl/sample.com.crt
-  register: sample_com_challenge
+  
+  - name: letsencrypt Zertifikat ertellen
+    letsencrypt:
+      account_key: /etc/pki/cert/private/account.key
+      csr: /etc/pki/cert/csr/sample.com.csr
+      dest: /etc/httpd/ssl/sample.com.crt
+    register: mally123.ddns.net
