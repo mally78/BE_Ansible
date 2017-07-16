@@ -3,13 +3,13 @@
   remote_user: root
   roles:
 #  - { role: bennojoy.nginx }
-#  - { role: SoInteractive.letsencrypt }  
+  - { role: SoInteractive.letsencrypt }  
     
-  tasks:
-  
-  - name: letsencrypt Zertifikat ertellen
-    letsencrypt:
-      account_key: /opt/account/account.key
-      csr: /opt/account/sample.com.csr
-      dest: /opt/account/sample.com.crt
-    register: mally123.ddns.net
+ # tasks:
+ # 
+ # - name: letsencrypt Zertifikat ertellen
+ #   letsencrypt:
+ #     account_key: /opt/account/account.key
+ #     csr: /opt/account/sample.com.csr
+ #     dest: /opt/account/sample.com.crt
+ #   register: mally123.ddns.net
