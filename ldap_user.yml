@@ -24,7 +24,8 @@
       objectClass:
         - groupOfNames
       attributes:
-        cn: "{{ ldap_kd_gruppe }}"   
+        cn: "{{ ldap_kd_gruppe }}"
+        member: "uid={{ ldap_uid }},{{ ldap_user_dn }}"
       server_uri: ldap://localhost/
       bind_dn: "{{ bind_dn }}"
       bind_pw: "{{ bind_pw }}"
