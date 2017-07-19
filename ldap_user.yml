@@ -18,7 +18,7 @@
       bind_pw: "{{ bind_pw }}"
       state: present
  
-  - name:Gruppe anlegen
+  - name: Gruppe anlegen
     ldap_entry:
       dn: "cn={{ ldap_kd_gruppe }},{{ ldap_gruppe_dn }}"
       objectClass:
