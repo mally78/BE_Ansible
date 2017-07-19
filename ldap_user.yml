@@ -5,18 +5,18 @@
 
   tasks:
   - name: User anlegen
-  ldap_entry:
-    dn: uid=dmustermann,ou=People,ou=People,dc=rs,dc=hosteurope,dc=de
-    objectClass:
-      - inetOrgPerson
-    attributes:
-      cn: "Dave Mustermann"
-      sn: "Mustermann"
-      givenName: "Dave"
-      uid: "dmustermann"
-      userPassword: "geheim"    
-    server_uri: ldap://localhost/
-    bind_dn: cn=admin,dc=rs,dc=hosteurope,dc=de
-    bind_pw: "{{ bind_pw }}"
-    state: present
+    ldap_entry:
+      dn: uid=dmustermann,ou=People,ou=People,dc=rs,dc=hosteurope,dc=de
+      objectClass:
+        - inetOrgPerson
+      attributes:
+        cn: "Dave Mustermann"
+        sn: "Mustermann"
+        givenName: "Dave"
+        uid: "dmustermann"
+        userPassword: "geheim"    
+      server_uri: ldap://localhost/
+      bind_dn: cn=admin,dc=rs,dc=hosteurope,dc=de
+      bind_pw: "{{ bind_pw }}"
+      state: present
  
