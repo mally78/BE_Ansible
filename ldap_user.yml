@@ -18,3 +18,14 @@
       bind_pw: "{{ bind_pw }}"
       state: present
  
+  - name:Gruppe anlegen
+    ldap_entry:
+      dn: "cn={{ ldap_kd_gruppe }},{{ ldap_gruppe_dn }}"
+      objectClass:
+        - groupOfNames
+      attributes:
+        cn: "{{ ldap_kd_gruppe }}"   
+      server_uri: ldap://localhost/
+      bind_dn: "{{ bind_dn }}"
+      bind_pw: "{{ bind_pw }}"
+      state: present
