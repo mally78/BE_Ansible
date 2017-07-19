@@ -8,10 +8,26 @@
 
 - name: Get rid of an unneeded attribute
   ldap_attr:
-    dn: uid=jdoe,ou=people,dc=example,dc=com
+    dn: uid=emustermann,ou=People,ou=People,dc=rs,dc=hosteurope,dc=de
     name: shadowExpire
     values: ""
     state: exact
     server_uri: ldap://localhost/
     bind_dn: cn=admin,dc=example,dc=com
     bind_pw: password
+
+- name: Make sure we have an admin user
+  ldap_entry:
+    dn: uid=emustermann,ou=People,ou=People,dc=rs,dc=hosteurope,dc=de
+    objectClass:
+      - inetOrgPerson
+    attributes:
+      cn: "Dave Mustermann"
+      sn: "Mustermann"
+      givenName: "Dave"
+      uid: "dmustermann"
+      userPassword: "geheim"    
+    server_uri: ldap://localhost/
+    bind_dn: cn=admin,dc=rs,dc=hosteurope,dc=de
+    bind_pw: password
+ 
