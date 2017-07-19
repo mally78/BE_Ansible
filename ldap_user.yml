@@ -5,7 +5,6 @@
   - name: User anlegen
     ldap_entry:
       dn: "uid={{ ldap_uid }},{{ ldap_user_dn }}"
-#      dn: uid=dmustermann,ou=People,ou=People,dc=rs,dc=hosteurope,dc=de
       objectClass:
         - inetOrgPerson
       attributes:
