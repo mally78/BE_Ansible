@@ -16,7 +16,7 @@
         uid: "dmustermann"
         userPassword: "geheim"    
       server_uri: ldap://localhost/
-      bind_dn: cn=admin,dc=rs,dc=hosteurope,dc=de
+      bind_dn: "{{ bind_dn }}"
       bind_pw: "{{ bind_pw }}"
       state: present
  
