@@ -1,24 +1,12 @@
-- name: Configure directory number 1 for example.com
-  ldap_attr:
-    dn: olcDatabase={1}hdb,cn=config
-    name: olcSuffix
-    values: dc=example,dc=com
-    state: exact
 
+---
+- hosts: server
+  remote_user: root
 
-- name: Get rid of an unneeded attribute
-  ldap_attr:
-    dn: uid=emustermann,ou=People,ou=People,dc=rs,dc=hosteurope,dc=de
-    name: shadowExpire
-    values: ""
-    state: exact
-    server_uri: ldap://localhost/
-    bind_dn: cn=admin,dc=example,dc=com
-    bind_pw: password
-
-- name: Make sure we have an admin user
+- tasks:
+  name: User anlegen
   ldap_entry:
-    dn: uid=emustermann,ou=People,ou=People,dc=rs,dc=hosteurope,dc=de
+    dn: ou=People,ou=People,dc=rs,dc=hosteurope,dc=de
     objectClass:
       - inetOrgPerson
     attributes:
@@ -29,5 +17,5 @@
       userPassword: "geheim"    
     server_uri: ldap://localhost/
     bind_dn: cn=admin,dc=rs,dc=hosteurope,dc=de
-    bind_pw: password
+    bind_pw: "{{ bind_pw }}"
  
