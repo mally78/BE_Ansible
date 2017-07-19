@@ -1,0 +1,6 @@
+- name: Configure directory number 1 for example.com
+  ldap_attr:
+    dn: olcDatabase={1}hdb,cn=config
+    name: olcSuffix
+    values: dc=example,dc=com
+    state: exact
