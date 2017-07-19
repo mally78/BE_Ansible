@@ -6,7 +6,7 @@
   tasks:
   - name: User anlegen
     ldap_entry:
-      dn: uid="{{ ldap_uid }}","{{ ldap_user_dn }}"
+      dn: "uid={{ ldap_uid }},{{ ldap_user_dn }}"
       objectClass:
         - inetOrgPerson
       attributes:
