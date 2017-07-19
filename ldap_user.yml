@@ -6,15 +6,15 @@
   tasks:
   - name: User anlegen
     ldap_entry:
-      dn: uid=dmustermann,ou=People,ou=People,dc=rs,dc=hosteurope,dc=de
+      dn: uid="{{ ldap_uid }}","{{ ldap_user_dn }}"
       objectClass:
         - inetOrgPerson
       attributes:
-        cn: "Dave Mustermann"
-        sn: "Mustermann"
-        givenName: "Dave"
-        uid: "dmustermann"
-        userPassword: "geheim"    
+        cn: "{{ ldap_cn }}"
+        sn: "{{ ldap_nachname }}"
+        givenName: "{{ ldap_vorname}}"
+        uid: "{{ ldap_uid }}"
+        userPassword: "{{userPassword }}"    
       server_uri: ldap://localhost/
       bind_dn: "{{ bind_dn }}"
       bind_pw: "{{ bind_pw }}"
