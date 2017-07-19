@@ -3,8 +3,8 @@
 - hosts: server
   remote_user: root
 
-- tasks:
-  name: User anlegen
+  tasks:
+  - name: User anlegen
   ldap_entry:
     dn: uid=dmustermann,ou=People,ou=People,dc=rs,dc=hosteurope,dc=de
     objectClass:
