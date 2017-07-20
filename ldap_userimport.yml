@@ -23,18 +23,18 @@
   
   - name: User anlegen
     ldap_entry:
-      dn: "uid={{ item.ldap_uid }},{{ item.ldap_user_dn }}"
+      dn: "uid={{ item.id.ldap_uid }},{{ item.id.ldap_user_dn }}"
       objectClass:
         - inetOrgPerson
       attributes:
-        cn: "{{ item.ldap_cn }}"
-        sn: "{{ item.ldap_nachname }}"
-        givenName: "{{ item.ldap_vorname}}"
-        uid: "{{ item.ldap_uid }}"
-        userPassword: "{{ item.userPassword }}"    
+        cn: "{{ item.id.ldap_cn }}"
+        sn: "{{ item.id.ldap_nachname }}"
+        givenName: "{{ item.id.ldap_vorname}}"
+        uid: "{{ item.id.ldap_uid }}"
+        userPassword: "{{ item.id.userPassword }}"    
       server_uri: ldap://localhost/
-      bind_dn: "{{ item.bind_dn }}"
-      bind_pw: "{{ item.bind_pw }}"
+      bind_dn: "{{ item.id.bind_dn }}"
+      bind_pw: "{{ item.id.bind_pw }}"
       state: present
       with_items: "{{ldapuser_template}}"
       
