@@ -14,7 +14,7 @@
     register: user_out
     
   - name: User anlegen
-    ldap_entry:
+    ldap_entry: >
       dn: "uid={{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=4 delimiter=,') }},{{ ldap_user_dn }}"
       objectClass:
         - inetOrgPerson
