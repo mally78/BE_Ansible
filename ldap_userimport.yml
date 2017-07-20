@@ -17,20 +17,20 @@
 #    register: user_out
   
   - name: User anlegen
-     ldap_entry:
-       dn: "uid={{ item.ldap_uid }},{{ ldap_user_dn }}"
-       objectClass:
-         - inetOrgPerson
-       attributes:
-         cn: "{{ item.ldap_cn }}"
-         sn: "{{ item.ldap_nachname }}"
-         givenName: "{{ item.ldap_vorname}}"
-         uid: "{{ item.ldap_uid }}"
-         userPassword: "{{ item.userPassword }}"    
-       server_uri: ldap://localhost/
-       bind_dn: "{{ bind_dn }}"
-       bind_pw: "{{ bind_pw }}"
-       state: present 
+    ldap_entry:
+      dn: "uid={{ item.ldap_uid }},{{ ldap_user_dn }}"
+      objectClass:
+        - inetOrgPerson
+      attributes:
+        cn: "{{ item.ldap_cn }}"
+        sn: "{{ item.ldap_nachname }}"
+        givenName: "{{ item.ldap_vorname}}"
+        uid: "{{ item.ldap_uid }}"
+        userPassword: "{{ item.userPassword }}"    
+      server_uri: ldap://localhost/
+      bind_dn: "{{ bind_dn }}"
+      bind_pw: "{{ bind_pw }}"
+      state: present 
   
   
   
