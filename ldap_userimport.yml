@@ -4,8 +4,8 @@
   
   tasks:
   - name: template kopieren
-    src: /home/daniel/NAS/odoo/ldapuser_template.csv
-    dest: /root/ldapuser_template.csv
+      src: /home/daniel/NAS/odoo/ldapuser_template.csv
+      dest: /root/ldapuser_template.csv
     
   - name: lookup of a cvs file
     command: /usr/bin/awk -F',' '!/^#/ && !/^$/ { print $1 }' /root/ldapuser_template.csv
