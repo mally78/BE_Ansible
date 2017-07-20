@@ -9,8 +9,8 @@
       dest: /root/ldapuser_template.csv
     
   - name: lookup of a cvs file
-    command: /usr/bin/awk -F',' '!/^#/ && !/^$/ { print $1 }' /root/ldapuser_template.csv
-#   debug: msg="{{ lookup('csvfile','user file=/home/daniel/NAS/odoo/ldapuser_template.csv delimiter=,') }}"
+#    command: /usr/bin/awk -F',' '!/^#/ && !/^$/ { print $1 }' /root/ldapuser_template.csv
+    debug: msg="{{ lookup('csvfile','item file=/home/daniel/NAS/odoo/ldapuser_template.csv delimiter=, col=0' ) }}"
     register: user_out
     
   - name: User anlegen
