@@ -4,7 +4,8 @@
   
   tasks:
   - name: lookup of a cvs file
-    debug: msg="{{ lookup('csvfile','dinner file=gamma.csv delimiter=, col=2') }}"
+    debug: msg="{{ lookup('csvfile','user file=gamma.csv delimiter=,') }}"
+    register: user_out
     
   - name: User anlegen
     ldap_entry:
@@ -21,17 +22,17 @@
       bind_dn: "{{ bind_dn }}"
       bind_pw: "{{ bind_pw }}"
       state: present
-      with_item: 
+      with_item:  "{{ user_out.stdout_lines }}"
  
-  - name: Gruppe anlegen
-    ldap_entry:
-      dn: "cn={{ ldap_kd_gruppe }},{{ ldap_gruppe_dn }}"
-      objectClass:
-        - groupOfNames
-      attributes:
-        cn: "{{ ldap_kd_gruppe }}"
-        member: "uid={{ ldap_uid }},{{ ldap_user_dn }}"
-      server_uri: ldap://localhost/
-      bind_dn: "{{ bind_dn }}"
-      bind_pw: "{{ bind_pw }}"
-state: present
+#  - name: Gruppe anlegen
+#    ldap_entry:
+#      dn: "cn={{ ldap_kd_gruppe }},{{ ldap_gruppe_dn }}"
+#      objectClass:
+#        - groupOfNames
+#      attributes:
+#        cn: "{{ ldap_kd_gruppe }}"
+#        member: "uid={{ ldap_uid }},{{ ldap_user_dn }}"
+#      server_uri: ldap://localhost/
+#      bind_dn: "{{ bind_dn }}"
+#      bind_pw: "{{ bind_pw }}"
+#      state: present
