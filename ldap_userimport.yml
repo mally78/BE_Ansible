@@ -4,7 +4,8 @@
   
   tasks:
   - name: lookup of a cvs file
-    debug: msg="{{ lookup('csvfile','user file=/home/daniel/NAS/odoo/ldapuser_template.csv delimiter=,') }}"
+    command: /usr/bin/awk -F',' '!/^#/ && !/^$/ { print $1 }' /home/daniel/NAS/odoo/ldapuser_template.csv
+#    debug: msg="{{ lookup('csvfile','user file=/home/daniel/NAS/odoo/ldapuser_template.csv delimiter=,') }}"
     register: user_out
     
   - name: User anlegen
