@@ -6,7 +6,7 @@
   - role: mkouhei.include_csv
   
   tasks:
-    - copy: 
+  - copy: 
     src: /home/daniel/NAS/odoo/ldapuser_template.csv
     dest: /root/ldapuser_template.csv
     
