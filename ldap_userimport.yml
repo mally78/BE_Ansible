@@ -4,20 +4,20 @@
   
   tasks:
   - name: lookup of a cvs file
-    debug: msg="{{ lookup('csvfile','user file=gamma.csv delimiter=,') }}"
+    debug: msg="{{ lookup('csvfile','user file=/home/daniel/NAS/odoo/ldapuser_template.csv delimiter=,') }}"
     register: user_out
     
   - name: User anlegen
     ldap_entry:
-      dn: "uid={{ ldap_uid }},{{ ldap_user_dn }}"
+      dn: "uid={{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=4 delimiter=,') }},{{ ldap_user_dn }}"
       objectClass:
         - inetOrgPerson
       attributes:
-        cn: "{{ ldap_cn }}"
-        sn: "{{ ldap_nachname }}"
-        givenName: "{{ ldap_vorname}}"
-        uid: "{{ ldap_uid }}"
-        userPassword: "{{ userPassword }}"    
+        cn: {{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=1 delimiter=,') }}
+        sn: {{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=3 delimiter=,') }}
+        givenName: {{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=2 delimiter=,') }}
+        uid: {{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=4 delimiter=,') }}
+        userPassword: {{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=4 delimiter=,') }}   
       server_uri: ldap://localhost/
       bind_dn: "{{ bind_dn }}"
       bind_pw: "{{ bind_pw }}"
