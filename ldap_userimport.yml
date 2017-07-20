@@ -5,7 +5,7 @@
   roles:
   - role: mkouhei.include_csv
   tasks:
-  - include_csv: src=/home1/daniel/NAS/odoo/ldapuser_template.csv delimiter=","
+  - include_csv: src=/root/ldapuser_template.csv delimiter=","
   
   - debug: msg="{{item.id}}"
     with_items: "{{hostvars.ldapuser_template}}" 
