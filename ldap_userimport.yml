@@ -3,8 +3,12 @@
   remote_user: root
   
   tasks:
+  - name: template kopieren
+    src: /home/daniel/NAS/odoo/ldapuser_template.csv
+    dest: /root/ldapuser_template.csv
+    
   - name: lookup of a cvs file
-    command: /usr/bin/awk -F',' '!/^#/ && !/^$/ { print $1 }' /home/daniel/NAS/odoo/ldapuser_template.csv
+    command: /usr/bin/awk -F',' '!/^#/ && !/^$/ { print $1 }' /root/ldapuser_template.csv
 #    debug: msg="{{ lookup('csvfile','user file=/home/daniel/NAS/odoo/ldapuser_template.csv delimiter=,') }}"
     register: user_out
     
