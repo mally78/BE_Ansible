@@ -1,0 +1,32 @@
+---
+- hosts: server
+  remote_user: root
+  tasks:
+  - name: User anlegen
+    ldap_entry:
+      dn: "uid={{ ldap_uid }},{{ ldap_user_dn }}"
+      objectClass:
+        - inetOrgPerson
+      attributes:
+        cn: "{{ ldap_cn }}"
+        sn: "{{ ldap_nachname }}"
+        givenName: "{{ ldap_vorname}}"
+        uid: "{{ ldap_uid }}"
+        userPassword: "{{ userPassword }}"    
+      server_uri: ldap://localhost/
+      bind_dn: "{{ bind_dn }}"
+      bind_pw: "{{ bind_pw }}"
+      state: present
+ 
+  - name: Gruppe anlegen
+    ldap_entry:
+      dn: "cn={{ ldap_kd_gruppe }},{{ ldap_gruppe_dn }}"
+      objectClass:
+        - groupOfNames
+      attributes:
+        cn: "{{ ldap_kd_gruppe }}"
+        member: "uid={{ ldap_uid }},{{ ldap_user_dn }}"
+      server_uri: ldap://localhost/
+      bind_dn: "{{ bind_dn }}"
+      bind_pw: "{{ bind_pw }}"
+state: present
