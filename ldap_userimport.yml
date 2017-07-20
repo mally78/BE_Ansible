@@ -30,7 +30,9 @@
       server_uri: ldap://localhost/
       bind_dn: "{{ bind_dn }}"
       bind_pw: "{{ bind_pw }}"
-      state: present 
+      state: present
+      with_items: "{{ldapuser_template}}"
+      
   
   
   
