@@ -8,7 +8,7 @@
   - include_csv: src=/root/ldapuser_template.csv delimiter=","
   
   - debug: msg="{{item.id}}"
-    with_items: "{{hostvars.localhost.ldapuser_template}}" 
+    with_items: "{{hostvars.www.mybizonline.eu.ldapuser_template}}" 
    
   
 #    - name: lookup of a cvs file
