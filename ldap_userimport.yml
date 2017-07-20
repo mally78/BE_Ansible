@@ -13,11 +13,11 @@
       objectClass:
         - inetOrgPerson
       attributes:
-        cn: {{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=1 delimiter=,') }}
-        sn: {{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=3 delimiter=,') }}
-        givenName: {{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=2 delimiter=,') }}
-        uid: {{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=4 delimiter=,') }}
-        userPassword: {{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=4 delimiter=,') }}   
+        cn: "{{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=1 delimiter=,') }}"
+        sn: "{{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=3 delimiter=,') }}"
+        givenName: "{{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=2 delimiter=,') }}"
+        uid: "{{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=4 delimiter=,') }}"
+        userPassword: "{{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=4 delimiter=,') }}"   
       server_uri: ldap://localhost/
       bind_dn: "{{ bind_dn }}"
       bind_pw: "{{ bind_pw }}"
