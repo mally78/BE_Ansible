@@ -1,7 +1,11 @@
 ---
 - hosts: server
   remote_user: root
+  
   tasks:
+  - name: lookup of a cvs file
+    debug: msg="{{ lookup('csvfile','dinner file=gamma.csv delimiter=, col=2') }}"
+    
   - name: User anlegen
     ldap_entry:
       dn: "uid={{ ldap_uid }},{{ ldap_user_dn }}"
@@ -17,6 +21,7 @@
       bind_dn: "{{ bind_dn }}"
       bind_pw: "{{ bind_pw }}"
       state: present
+      with_item: 
  
   - name: Gruppe anlegen
     ldap_entry:
