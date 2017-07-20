@@ -29,6 +29,7 @@
       bind_pw: "{{ bind_pw }}"
       state: present
       with_item:  "{{ user_out.stdout_lines }}"
+      ignore_errors: True
  
 #  - name: Gruppe anlegen
 #    ldap_entry:
