@@ -36,7 +36,7 @@
       bind_dn: "{{ item['id']['bind_dn'] }}"
       bind_pw: "{{ item['id']['bind_pw'] }}"
       state: present
-     with_items: "{{ldapuser_template}}"
+    with_items: "{{ldapuser_template}}"
       
   
   
