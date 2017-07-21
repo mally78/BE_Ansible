@@ -50,14 +50,10 @@
   - name: User der neuen Gruppe hinzufügen
     ldap_attr:
       dn: "cn={{ item.ldap_kd_gruppe }},{{ item.ldap_gruppe_dn }}"
-      
-      objectClass:
-        - groupOfNames
-      attributes:
-        cn: "{{ item.ldap_kd_gruppe }}"
-        member: "uid={{ item.ldap_uid }},{{ item.ldap_user_dn }}"
+      name: member
+      values: "uid={{ item.ldap_uid }},{{ item.ldap_user_dn }}"
       server_uri: ldap://localhost/
       bind_dn: "{{ item.bind_dn }}"
       bind_pw: "{{ item.bind_pw }}"
       state: present
-with_items: "{{ldapuser_template}}"
+    with_items: "{{ldapuser_template}}"
