@@ -26,7 +26,7 @@
       dn: "uid={{ item.ldap_uid }},{{ item.ldap_user_dn }}"
       objectClass:
         - inetOrgPerson
-      attribute:
+      attributes:
         cn: "{{ item.ldap_cn }}"
         sn: "{{ item.ldap_nachname }}"
         givenName: "{{ item.ldap_vorname }}"
