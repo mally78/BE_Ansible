@@ -14,12 +14,6 @@
   
 #  - debug: msg="{{item.id}}"
 #    with_items: "{{ldapuser_template}}" 
-   
-
-#    - name: lookup of a cvs file
-#    command: /usr/bin/awk -F',' '!/^#/ && !/^$/ { print $1 }' /root/ldapuser_template.csv
-#    debug: msg="{{ lookup('csvfile','item file=/home/daniel/NAS/odoo/ldapuser_template.csv delimiter=, col=0' ) }}"
-#    register: user_out
   
   - name: User anlegen
     ldap_entry:
@@ -38,26 +32,6 @@
       state: present
     with_items: "{{ldapuser_template}}"
       
-  
-  
-  
-#  - name: User anlegen
-#    ldap_entry: >
-#      dn: "uid={{ lookup('csvfile', item + ' file=/home1/daniel/NAS/odoo/ldapuser_template.csv col=4 delimiter=,') }},{{ ldap_user_dn }}"
-#      objectClass:
-#        - inetOrgPerson
-#      attributes:
-#        cn: "{{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=1 delimiter=,') }}"
-#        sn: "{{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=3 delimiter=,') }}"
-#        givenName: "{{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=2 delimiter=,') }}"
-#        uid: "{{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=4 delimiter=,') }}"
-#        userPassword: "{{ lookup('csvfile', item + ' file=/home/daniel/NAS/odoo/ldapuser_template.csv col=4 delimiter=,') }}"   
-#      server_uri: ldap://localhost/
-#      bind_dn: "{{ bind_dn }}"
-#      bind_pw: "{{ bind_pw }}"
-#      state: present
-#      with_item:  "{{ user_out.stdout_lines }}"
-#      ignore_errors: True
  
 #  - name: Gruppe anlegen
 #    ldap_entry:
