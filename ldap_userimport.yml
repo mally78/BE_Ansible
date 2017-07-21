@@ -27,7 +27,7 @@
       objectClass:
         - inetOrgPerson
       attributes
-        cn: "{{ item['id']['ldap_cn'] }}"
+        cn: {{ item['id']['ldap_cn'] }}
         sn: "{{ item['id']['ldap_nachname'] }}"
         givenName: "{{ item['id']['ldap_vorname'] }}"
         uid: "{{ item['id']['ldap_uid'] }}"
