@@ -33,15 +33,16 @@
     with_items: "{{ldapuser_template}}"
       
  
-#  - name: Gruppe anlegen
-#    ldap_entry:
-#      dn: "cn={{ ldap_kd_gruppe }},{{ ldap_gruppe_dn }}"
-#      objectClass:
-#        - groupOfNames
-#      attributes:
-#        cn: "{{ ldap_kd_gruppe }}"
-#        member: "uid={{ ldap_uid }},{{ ldap_user_dn }}"
-#      server_uri: ldap://localhost/
-#      bind_dn: "{{ bind_dn }}"
-#      bind_pw: "{{ bind_pw }}"
-#      state: present
+  - name: Gruppe anlegen
+    ldap_entry:
+      dn: "cn={{ item.ldap_kd_gruppe }},{{ item.ldap_gruppe_dn }}"
+      objectClass:
+        - groupOfNames
+      attributes:
+        cn: "{{ item.ldap_kd_gruppe }}"
+        member: "uid={{ item.ldap_uid }},{{ item.ldap_user_dn }}"
+      server_uri: ldap://localhost/
+      bind_dn: "{{ item.bind_dn }}"
+      bind_pw: "{{ item.bind_pw }}"
+      state: present
+    with_items: "{{ldapuser_template}}"
