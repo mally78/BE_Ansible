@@ -12,8 +12,8 @@
     
   - include_csv: src=/root/ldapuser_template.csv delimiter=","
   
-  - debug: msg="{{item.id}}"
-    with_items: "{{ldapuser_template}}" 
+#  - debug: msg="{{item.id}}"
+#    with_items: "{{ldapuser_template}}" 
    
 
 #    - name: lookup of a cvs file
