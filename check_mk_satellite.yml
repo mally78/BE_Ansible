@@ -7,7 +7,7 @@
   tasks:
   - name: Hostname setzen
     hostname:
-     - name: {{ rh_hostname }}
+     - name: "{{ rh_hostname }}"
   
   - name: Download Check_mk Paket
     get_url:
