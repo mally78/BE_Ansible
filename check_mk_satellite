@@ -15,6 +15,12 @@
       dest: /tmp
       mode: 0755
   
+  - name: Install Check_mk rpm
+    yum:
+      name: /tmp/check-mk-raw-{{ check_mk_version }}-el7-56.x86_64.rpm
+      state: present
+     
+     
   - name: notwendige tools installieren
     yum: state=latest name={{ item }}
     with_items: 
