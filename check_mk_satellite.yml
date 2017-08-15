@@ -26,3 +26,6 @@
     command: omd sites
     register: myomdsites
 
+  - name: create new omd sites
+    command: omd create "{{ omdsite }}
+    
