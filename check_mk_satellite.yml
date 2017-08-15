@@ -27,5 +27,6 @@
     register: myomdsites
 
   - name: create new omd sites
-    command: omd create "{{ omdsite }}
+    command: omd create "{{ omdsite }}"
+    when: not myomdsites.stdout = '{{ omdsite }}'
     
