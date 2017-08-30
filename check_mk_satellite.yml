@@ -28,5 +28,5 @@
 
   - name: create new omd sites
     command: omd create "{{ omdsite }}"
-    when: "{{ omdsite }}" not in myomdsites.stdout
+    when: '"{{ omdsite }}" not in myomdsites.stdout'
     
