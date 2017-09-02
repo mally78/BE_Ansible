@@ -38,3 +38,7 @@
     mode: '0655'
     notify: 
     - restart omd
+  
+    handlers:
+  - name: restart apache
+    command: omd restart "{{ omdsite }}"
