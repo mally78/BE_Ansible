@@ -1,12 +1,6 @@
 
 ---
-- hosts: server
-  remote_user: root
-#  roles: 
-#  - { role: bertvv.rh-base }
-# - epel-
-   
-  tasks:
+
   - name: Hostname setzen
     hostname:
       name: "{{ rh_hostname }}"
