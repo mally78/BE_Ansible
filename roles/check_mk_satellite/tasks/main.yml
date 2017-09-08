@@ -1,21 +1,11 @@
 ---
-- hosts: server
-  remote_user: root
-#  roles: 
-#  - { role: bertvv.rh-base }
-# - epel-
-   
-  tasks:
-  - name: Hostname setzen
-    hostname:
-      name: "{{ rh_hostname }}"
-  
-#  - name: Download Check_mk Paket
- #   get_url:
-  #    url: https://mathias-kettner.de/support/{{ check_mk_version }}/check-mk-raw-{{ check_mk_version }}-el7-56.x86_64.rpm
-#      dest: /tmp
-#      validate_certs: no
-#      mode: 0755
+
+  - name: Download Check_mk Paket
+    get_url:
+      url: https://mathias-kettner.de/support/{{ check_mk_version }}/check-mk-raw-{{ check_mk_version }}-el7-56.x86_64.rpm
+      dest: /tmp
+      validate_certs: no
+      mode: 0755
   
   - name: Install Check_mk rpm
     yum:
