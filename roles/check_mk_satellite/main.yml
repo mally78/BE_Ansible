@@ -1,6 +1,9 @@
 
 ---
-
+- hosts: server
+  remote_user: root
+  
+  tasks:
   - name: Hostname setzen
     hostname:
       name: "{{ rh_hostname }}"
