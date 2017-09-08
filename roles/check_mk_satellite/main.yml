@@ -1,8 +1,5 @@
 ---
-- hosts: server1
-  remote_user: root
-  
-  tasks:
+
   - name: Download Check_mk Paket
     get_url:
       url: https://mathias-kettner.de/support/{{ check_mk_version }}/check-mk-raw-{{ check_mk_version }}-el7-56.x86_64.rpm
