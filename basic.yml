@@ -2,8 +2,9 @@
 - hosts: server
   remote_user: root
   roles: 
-  - { role: blackstar257.selinux, selinux_state: disabled }
-  - { role: goozbach.EPEL, epel_testing_enabled: 1 }
+#  - { role: blackstar257.selinux, selinux_state: disabled }
+#  - { role: goozbach.EPEL, epel_testing_enabled: 1 }
+   - { role: peru.proxy_settings }
    
   tasks:
   - name: notwendige tools installieren
