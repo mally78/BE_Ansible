@@ -24,7 +24,7 @@
     template: 
       src: site.j2 
       dest: /opt/omd/sites/{{ omdsite }}/etc/omd/site.conf
-                 force: yes
+      force: yes
       owner: "{{ omdsite }}"
       group: "{{ omdsite }}"
       mode: '0655'
