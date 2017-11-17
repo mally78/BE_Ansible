@@ -4,7 +4,8 @@
   roles: 
 #  - { role: blackstar257.selinux, selinux_state: disabled }
 #  - { role: goozbach.EPEL, epel_testing_enabled: 1 }
-   - { role: peru.proxy_settings }
+   - { role: peru.proxy_settings,
+       tags: proxy }
    
   tasks:
   - name: notwendige tools installieren
