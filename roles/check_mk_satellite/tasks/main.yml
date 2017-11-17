@@ -3,7 +3,7 @@
   - name: Download Check_mk Paket
     get_url:
       url: https://mathias-kettner.de/support/{{ check_mk_version }}/check-mk-raw-{{ check_mk_version }}-el7-65.x86_64.rpm
-      dest: /tmp
+      dest: /tmp/check-mk-raw-{{ check_mk_version }}-el7-65.x86_64.rpm
       validate_certs: no
       mode: 0755
   
