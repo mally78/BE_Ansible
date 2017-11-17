@@ -14,7 +14,7 @@
 
   - name: confirure livestatus port in Firewall 
     firewalld:
-      port: "{{ livestatus_port }}"/tcp
+      port: "{{ livestatus_port }}/tcp"
       permanent: true
       state: enabled
     
