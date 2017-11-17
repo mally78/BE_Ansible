@@ -9,7 +9,8 @@
   tasks:
   - name: notwendige tools installieren
     yum: state=latest name={{ item }}
-    with_items: 
+    with_items:
+    - epel-release
     - bash-completion
     - mc
     - setroubleshoot-server
