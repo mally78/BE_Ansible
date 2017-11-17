@@ -11,7 +11,13 @@
     yum:
       name: /tmp/check-mk-raw-{{ check_mk_version }}-el7-65.x86_64.rpm
       state: present
-     
+
+  - name: confirure livestatus port in Firewall 
+    firewalld:
+      port: {{ livestatus_port }}/tcp
+      permanent: true
+      state: enabled
+    
   - name: list omd sites
     command: omd sites
     register: myomdsites
