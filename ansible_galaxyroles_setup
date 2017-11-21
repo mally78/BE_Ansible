@@ -2,17 +2,11 @@
 ---
 - hosts: ansible
   remote_user: root
-  roles: 
-#  - { role: blackstar257.selinux, selinux_state: disabled }
-#  - { role: goozbach.EPEL, epel_testing_enabled: 1 }
-   - { role: peru.proxy_settings, tags: ['proxy'] }
-
+  
   tasks:
-  - name: notwendige tools installieren
-    yum: state=latest name={{ item }}
+  - name: Install roles from Ansible Galaxy
+    command: ansible-galaxy install {{ item.item }}
     with_items:
-    - epel-release
-    - bash-completion
-    - mc
-    - setroubleshoot-server
-- vim
+      - peru.proxy_settings
+      - blackstar257.selinux
+ #   - "{{ ansible_roles_list }}"
