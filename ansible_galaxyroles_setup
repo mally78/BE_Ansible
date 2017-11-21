@@ -1,6 +1,6 @@
 
 ---
-- hosts: server
+- hosts: ansible
   remote_user: root
   roles: 
 #  - { role: blackstar257.selinux, selinux_state: disabled }
