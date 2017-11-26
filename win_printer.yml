@@ -3,7 +3,7 @@
 
   tasks:
   - name: Drucker anlegen
-    win_shell: add-printer -name "D_Büro_P4035i_SW" -drivername "P-4035i MFP KX" -port "192.168.178.22" -Published -Shared -ShareName "D_Büro
+    win_shell: add-printer -name "D_test_P4035i_SW" -drivername "P-4035i MFP KX" -port "192.168.178.22" -Published -Shared -ShareName "D_test
     _P4035i_SW"
    # yum: state=latest name={{ item }}
    # with_items:
