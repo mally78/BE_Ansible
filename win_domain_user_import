@@ -5,12 +5,12 @@
   tasks:
   
   - name: get groups
-    win_command: Get-Content C:\Scripts\Test.txt
-    register: groups_out
+    win_command: Get-Content C:\Scripts\userimport.csv
+    register: userimport_out
 
   - name: Ensure users are present with address information
     win_domain_user: >
-      name: {{ lookup('csvfile', item + ' file=groups.csv col=0 delimiter=,') }}
+      name: {{ lookup('csvfile', item + ' file=userimport.csv col=0 delimiter=,') }}
       firstname: Bob
       surname: Smith
       company: BobCo
@@ -23,5 +23,5 @@
       state_province: IN
       postal_code: 12345
       country: US
-    with_items: "{{ groups_out.stdout_lines }}"
+    with_items: "{{ userimport_out.stdout_lines }}"
     ignore_errors: True
