@@ -3,12 +3,9 @@
   remote_user: root
   
   tasks:
-  - copy: 
-      src: /home/daniel/NAS/odoo/ldapuser_template.csv
-      dest: /root/ldapuser_template.csv
   
   - name: get groups
-    command: /usr/bin/awk -F',' '!/^#/ && !/^$/ { print $1 }' /var/tmp/groups.csv
+    win_command: Get-Content C:\Scripts\Test.txt
     register: groups_out
 
   - name: Ensure users are present with address information
