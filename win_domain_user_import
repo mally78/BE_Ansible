@@ -2,9 +2,6 @@
 - hosts: server
   remote_user: root
   
-  roles:
-  - role: mkouhei.include_csv
-  
   tasks:
   - copy: 
       src: /home/daniel/NAS/odoo/ldapuser_template.csv
