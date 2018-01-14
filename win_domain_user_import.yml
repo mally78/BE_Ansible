@@ -19,7 +19,7 @@
 #      groups:
 #        - Domain Admins
 #      street: {{ lookup('csvfile', item + ' file=userimport.csv col=6 delimiter=;') }}
-      city: {{ lookup('csvfile', item + ' file=userimport.csv col=5 delimiter=;') }}
-      postal_code: {{ lookup('csvfile', item + ' file=userimport.csv col=4 delimiter=;') }}
+#      city: {{ lookup('csvfile', item + ' file=userimport.csv col=5 delimiter=;') }}
+#      postal_code: {{ lookup('csvfile', item + ' file=userimport.csv col=4 delimiter=;') }}
     with_items: "{{ userimport_out.stdout_lines }}"
     ignore_errors: True
