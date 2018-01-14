@@ -1,0 +1,33 @@
+---
+- hosts: server
+  remote_user: root
+  
+  roles:
+  - role: mkouhei.include_csv
+  
+  tasks:
+  - copy: 
+      src: /home/daniel/NAS/odoo/ldapuser_template.csv
+      dest: /root/ldapuser_template.csv
+  
+  - name: get groups
+    command: /usr/bin/awk -F',' '!/^#/ && !/^$/ { print $1 }' /var/tmp/groups.csv
+    register: groups_out
+
+  - name: Ensure users are present with address information
+    win_domain_user: >
+      name: {{ lookup('csvfile', item + ' file=groups.csv col=0 delimiter=,') }}
+      firstname: Bob
+      surname: Smith
+      company: BobCo
+      password: B0bP4ssw0rd
+      state: present
+      groups:
+        - Domain Admins
+      street: 123 4th St.
+      city: Sometown
+      state_province: IN
+      postal_code: 12345
+      country: US
+    with_items: "{{ groups_out.stdout_lines }}"
+    ignore_errors: True
