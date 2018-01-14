@@ -8,7 +8,7 @@
     register: userimport_out
 
   - name: Ensure users are present with address information
-    win_domain_user: >
+    win_domain_user:
       name: "{{ lookup('csvfile', item + ' file=userimport.csv col=0 delimiter=;') }}"
       firstname: "{{ lookup('csvfile', item + ' file=userimport.csv col=1 delimiter=;') }}"
       surname: "{{ lookup('csvfile', item + ' file=userimport.csv col=2 delimiter=;') }}"
