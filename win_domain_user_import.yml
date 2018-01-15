@@ -23,4 +23,4 @@
 #      postal_code: {{ lookup('csvfile', item + ' file=userimport.csv col=4 delimiter=;') }}
 #    with_items: "{{ userimport_out.stdout_lines }}"
     with_lines: powershell.exe Get-Content {{ pfad }}
-    ignore_errors: True
+#    ignore_errors: True
