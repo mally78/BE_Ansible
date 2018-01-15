@@ -3,9 +3,9 @@
   
   tasks:
   
-#  - name: get groups
-#    win_shell: Get-Content {{ pfad }}
-#    register: userimport_out
+  - name: get content
+    win_shell: Get-Content {{ pfad }}
+    register: userimport_out
 
   - name: Ensure users are present with address information
     win_domain_user:
@@ -21,6 +21,6 @@
 #      street: {{ lookup('csvfile', item + ' file=userimport.csv col=6 delimiter=;') }}
 #      city: {{ lookup('csvfile', item + ' file=userimport.csv col=5 delimiter=;') }}
 #      postal_code: {{ lookup('csvfile', item + ' file=userimport.csv col=4 delimiter=;') }}
-#    with_items: "{{ userimport_out.stdout_lines }}"
-    with_lines: Get-Content {{ pfad }}
+    with_items: "{{ userimport_out.stdout_lines }}"
+#    with_lines: Get-Content {{ pfad }}
 #    ignore_errors: True
