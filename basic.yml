@@ -12,6 +12,7 @@
     with_items:
     - epel-release
     - bash-completion
+    - bash-completion-extras
     - mc
     - setroubleshoot-server
     - vim
