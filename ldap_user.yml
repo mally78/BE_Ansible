@@ -1,5 +1,5 @@
 ---
-- hosts: server
+- hosts: ldap
   remote_user: root
   tasks:
   - name: User anlegen
